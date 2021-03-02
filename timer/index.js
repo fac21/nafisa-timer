@@ -27,19 +27,19 @@ showRightTime()
 
 
 let timer = setInterval(myTimer, 1000)
+
    
-  function myTimer() {
-    let reachFive = false
+  function myTimer() { //counting down from displayed time - 25
     seconds2 -=1
     if (seconds2 < 0){
     seconds2 = 59
     minutes2 -= 1
     }
-       if (minutes2 === 0 && seconds2 === 0){
-   clearInterval(timer)
+       if (minutes2 === 0 && seconds2 === 0){ 
+   clearInterval(timer)  //once 0 is reached stop the function
  }
      
     
-showRightTime()
+showRightTime() //updating text content of minutes and seconds with each change
 
 }
