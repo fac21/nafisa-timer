@@ -1,7 +1,7 @@
 
 const minutes = document.getElementById("minutes")
 const seconds = document.getElementById("seconds")
-const stopStart = document.getElementById("stop-start")
+const startStop = document.getElementById("stop-start")
 const reset = document.getElementById("reset")
 
 let minutes2 = 25 //starting with 25 minutes
@@ -25,7 +25,7 @@ function showRightTime(){  //adding "extra" zeros
   
 showRightTime()
 
-
+let playing = true;
 let timer = setInterval(myTimer, 1000)
 
    
@@ -65,5 +65,17 @@ reset.addEventListener("click", function(){
     minutes2 = 25 //setting minutes back to 25
     seconds2 = 0
     showRightTime() //function to display this
-  timer; //calling variable that contains the setInterval function to countdown minutes and seconds
   })
+
+  startStop.addEventListener("click", function(){
+    if (playing){  //variable is alreay set to true previously
+     clearInterval(timer) //so if clicked setInterval function will stop
+      startStop.textContent = "Start"
+       playing = false //setting variable back to false
+    }  else  if (playing == false){
+    startStop.textContent = "Stop"
+     setInterval(myTimer, 1000) //question on how to start the set interval again
+      playing = true
+      
+    }
+   })
