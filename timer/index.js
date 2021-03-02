@@ -30,6 +30,7 @@ let timer = setInterval(myTimer, 1000)
 
    
   function myTimer() { //counting down from displayed time - 25
+    let reachedFive = false;
     seconds2 -=1
     if (seconds2 < 0){
     seconds2 = 59
@@ -37,6 +38,24 @@ let timer = setInterval(myTimer, 1000)
     }
        if (minutes2 === 0 && seconds2 === 0){ 
    clearInterval(timer)  //once 0 is reached stop the function
+   reachedFive = true
+   if (reachedFive){
+    minutes2 = 5
+   seconds2 = 0
+    let timer2 = setInterval(myFunction, 1000)
+    function myFunction(){
+      seconds2 -=1
+     if (seconds2 < 0){
+      seconds2 = 59
+      minutes2 -= 1
+    }
+    if (minutes2 === 0 && seconds2 === 0){ 
+      clearInterval(timer2)
+    }
+     showRightTime()
+       }
+       
+ }
  }
      
     
