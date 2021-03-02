@@ -9,7 +9,7 @@ body{
   }
   
   main{
-    font-size:50px;
+    font-size:70px;
   }
   
   main{
@@ -20,6 +20,9 @@ body{
   button{
   font-family: 'Playfair Display', serif;
   margin: 30px 10px;
+  width:100px;
+  font-size:13px;
+  padding:7px;
   background-color:#fd6c9e;
   font-weight:800;
   color:white;

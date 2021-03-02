@@ -38,23 +38,22 @@ let timer = setInterval(myTimer, 1000)
     }
        if (minutes2 === 0 && seconds2 === 0){ 
    clearInterval(timer)  //once 0 is reached stop the function
-   reachedFive = true
-   if (reachedFive){
-    minutes2 = 5
-   seconds2 = 0
-    let timer2 = setInterval(myFunction, 1000)
-    function myFunction(){
-      seconds2 -=1
-     if (seconds2 < 0){
-      seconds2 = 59
-      minutes2 -= 1
-    }
-    if (minutes2 === 0 && seconds2 === 0){ 
-      clearInterval(timer2)
-    }
-     showRightTime()
-       }
-       
+   reachedFive = true //changing the variable to true
+      if (reachedFive){ 
+       minutes2 = 5 //so countdown from 5 minutes can start
+       seconds2 = 0
+       let timer2 = setInterval(myFunction, 1000)
+       function myFunction(){
+         seconds2 -=1
+         if (seconds2 < 0){
+         seconds2 = 59
+         minutes2 -= 1
+          }
+         if (minutes2 === 0 && seconds2 === 0){ 
+        clearInterval(timer2) //stopping the function at 0 by clearing the interval
+          }
+        showRightTime()
+          }
  }
  }
      
