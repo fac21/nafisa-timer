@@ -75,6 +75,7 @@ reset.addEventListener("click", function(){
     }  else  if (playing == false){
     startStop.textContent = "Stop"
      setInterval(myTimer, 1000) //question on how to start the set interval again
+    // timer = setInterval(myTimer, 1000) i  found this to work but wasn't sure why
       playing = true
       
     }
