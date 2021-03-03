@@ -23,4 +23,10 @@ seconds.textContent = seconds2
 
 ```
 
-For the buttons, i was mainly stuck on the start/stop button. When clicked twice it did stop and start, but i was unsure why it wouldn't work again after that. I think it may have something to do with how i called the setInterval function. I read [here](https://www.freecodecamp.org/news/javascript-timers-everything-you-need-to-know-5f31eaa37162/) about timer ID's and thought that i didn't completely understand how they work.
+For the buttons, i was mainly stuck on the start/stop button. When clicked twice it did stop and start, but i was unsure why it wouldn't work again after that. When i assigned the setInterval function to the same variable it did work however and i think this was because i had to create a new timer.
+
+### Some things i want to try/change:
+
+- Try a more a challenging css layout whhich uses flexbox and includes an animation.
+- Using responsive css measurement properties
+- Changing the timer so it doesn't start automatically, but only when the start button is clicked.
