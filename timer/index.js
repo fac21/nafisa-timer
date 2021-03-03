@@ -3,11 +3,13 @@ const minutes = document.getElementById("minutes")
 const seconds = document.getElementById("seconds")
 const startStop = document.getElementById("stop-start")
 const reset = document.getElementById("reset")
+const subtitle = document.getElementById("subtitle")
 
 let minutes2 = 25 //starting with 25 minutes
 let seconds2 = 0
 let extraMin= 0
 let extraSec = 0
+subtitle.textContent= "WORK TIME"
 
 function showRightTime(){  //adding "extra" zeros
     if (minutes2 < 10){
@@ -42,6 +44,7 @@ let timer = setInterval(myTimer, 1000)
       if (reachedFive){ 
        minutes2 = 5 //so countdown from 5 minutes can now start
        seconds2 = 0
+       subtitle.textContent= "REST TIME"
        let timer2 = setInterval(myFunction, 1000)
          function myFunction(){
           seconds2 -=1
@@ -56,14 +59,13 @@ let timer = setInterval(myTimer, 1000)
         }
  }
  }
-     
-    
 showRightTime() //updating text content of minutes and seconds with each change
 }
 
 reset.addEventListener("click", function(){
     minutes2 = 25 //setting minutes back to 25
     seconds2 = 0
+    subtitle.textContent= "WORK TIME"
     showRightTime() //function to display this
   })
 
@@ -74,8 +76,7 @@ reset.addEventListener("click", function(){
        playing = false //setting variable back to false
     }  else  if (playing == false){
     startStop.textContent = "Stop"
-     setInterval(myTimer, 1000) //question on how to start the set interval again
-    // timer = setInterval(myTimer, 1000) i  found this to work but wasn't sure why
+    timer = setInterval(myTimer, 1000) //starting setInterval again
       playing = true
       
     }
