@@ -27,10 +27,8 @@ function showRightTime(){  //adding "extra" zeros
   
 showRightTime()
 
-let playing = true;
-let timer = setInterval(myTimer, 1000)
+let playing = false;
 
-   
   function myTimer() { //counting down from displayed time - 25
     let reachedFive = false;
     seconds2 -=1
@@ -70,14 +68,13 @@ reset.addEventListener("click", function(){
   })
 
   startStop.addEventListener("click", function(){
-    if (playing){  //variable is alreay set to true previously
-     clearInterval(timer) //so if clicked setInterval function will stop
-      startStop.textContent = "Start"
-       playing = false //setting variable back to false
-    }  else  if (playing == false){
-    startStop.textContent = "Stop"
-    timer = setInterval(myTimer, 1000) //starting setInterval again
-      playing = true
-      
+    if (playing == false){  
+      timer = setInterval(myTimer, 1000)
+      startStop.textContent = "Stop"
+       playing = true;
+    }  else  if (playing){
+    startStop.textContent = "Start"
+    clearInterval(timer) 
+      playing = false;
     }
    })
